@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Portfolio</title>
+<style>
+  :root {
+    --bg: #ffd9e8;          /* pink page background */
+    --card: #ffffff;        /* white cards */
+    --ink: #3d1530;         /* dark plum for text */
+    --muted: #8a5a74;       /* softer text */
+    --accent: #e5367f;      /* hot pink */
+    --accent-dark: #b81660; /* deeper pink for text on light pink */
+    --accent-soft: #ffeaf3; /* very light pink */
+    --line: #ffc2dc;
+  }
+
+  body {
+    font-family: "Source Sans 3", Arial, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--ink);
+    background-color: var(--bg);
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem 1rem 3rem;
+  }
+
+  h1, h2, h3 {
+    font-family: "Bricolage Grotesque", Arial, sans-serif;
+  }
+
+  /* Top hero: pink gradient with white text */
+  header {
+    background: linear-gradient(135deg, #ff7eb3, #e5367f);
+    color: white;
+    padding: 2.5rem 2rem;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(229, 54, 127, 0.3);
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 9vw, 3.75rem);
+    margin: 0.75rem 0 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  header p {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .tag {
+    display: inline-block;
+    font-family: monospace;
+    background-color: white;
+    color: var(--accent-dark);
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+  }
+
+  /* Every section becomes a white card */
+  section {
+    background-color: var(--card);
+    margin-top: 1.5rem;
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(229, 54, 127, 0.12);
+  }
+
+  h2 {
+    color: var(--accent);
+    margin-top: 0;
+  }
+
+  /* Skills: pink pills */
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    background-color: var(--accent-soft);
+    color: var(--accent-dark);
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+
+  li:hover {
+    transform: translateY(-3px);
+    background-color: var(--accent);
+    color: white;
+  }
+
+  /* Projects: soft pink boxes inside the white card */
+  .project {
+    background-color: var(--accent-soft);
+    padding: 1rem 1.25rem;
+    border-radius: 14px;
+    margin-top: 0.75rem;
+    transition: transform 0.2s;
+  }
+
+  .project:hover {
+    transform: translateY(-3px);
+  }
+
+  .project h3 {
+    margin: 0 0 0.25rem;
+  }
+
+  .project p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  /* Contact button: solid pink, white text */
+  button {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.6rem 1.4rem;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--accent);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(229, 54, 127, 0.35);
+    transition: transform 0.2s;
+  }
+
+  button:hover {
+    transform: translateY(-2px);
+    background-color: var(--accent-dark);
+  }
+</style>
+</head>
+<body>
+  <h1>Hello, world</h1>
+  <p>This is my first website.</p>
+  <header>
+    <h1>Aashita kothepath </h1>
+    <p>BSCS student learning to build things with code.</p>
+  </header>
+
+  <section>
+    <h2>About me</h2>
+    <p>Hi! I'm a passionate Computer Science student at SIES Nerul College with a keen interest in programming, web development, and technology. I love turning ideas into creative digital experiences, exploring new technologies, and building projects that combine creativity with problem-solving. I'm always eager to learn, grow, and transform my knowledge into meaningful work..</p>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li>Python</li>
+      <li>HTML</li>
+      <li>Java</li>
+    </ul>
+  </section>
+<section>
+  <h2>Projects</h2>
+
+  <div class="project">
+    <h3>This portfolio</h3>
+    <p>My first website, built by hand with HTML and CSS.</p>
+  </div>
+
+  <div class="project">
+    <h3>Your next project</h3>
+    <p> Student Productivity Dashboard
+
+A web-based productivity tool designed to help students organize their study schedules, manage assignments, save notes, and track their daily progress. Built with HTML, CSS, and JavaScript, the project focuses on improving productivity through a simple, interactive, and user-friendly interface.
+Technologies:HTML | CSS | JavaScript.</p>
+  </div>
+</section>
+    <section>
+  <h2>Contact</h2>
+  <p>Email: <span id="email">aashita.kt@gmail.com</span></p>
+  <button id="copy-btn">Copy email</button>
+</section>
+  </section>
+  <script>
+  const button = document.getElementById("copy-btn");
+  const email = document.getElementById("email");
+
+  button.addEventListener("click", function () {
+    navigator.clipboard.writeText(email.textContent);
+    button.textContent = "Copied!";
+
+    setTimeout(function () {
+      button.textContent = "Copy email";
+    }, 2000);
+  });
+</script>
+</body>
+</html>
